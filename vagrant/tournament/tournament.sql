@@ -43,8 +43,8 @@ CREATE VIEW standings AS (
 	SELECT
 		players.id,
 		players.name,
-		coalesce(total_matches.total_matches, 0) AS total_matches,
-		coalesce(wins.wins ,0) AS wins
+		coalesce(wins.wins ,0) AS wins,
+		coalesce(total_matches.total_matches, 0) AS total_matches
 	FROM players
 	LEFT JOIN total_matches
 	ON players.id=total_matches.id
