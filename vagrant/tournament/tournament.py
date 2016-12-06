@@ -102,8 +102,8 @@ def reportMatch(winner, loser):
     """
     db, cursor = connect()
 
-    query = "INSERT INTO matches (winner, loser) VALUES (%s, %s);" % (winner, loser)
-    cursor.execute(query)
+    query = "INSERT INTO matches (winner, loser) VALUES (%s, %s);"
+    cursor.execute(query, (winner, loser,))
     db.commit()
     db.close()
 
